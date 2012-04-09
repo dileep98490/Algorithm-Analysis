@@ -1,0 +1,6 @@
+function[cp]=Quickcall(m,l)
+global a;
+a=m;
+disp(a);
+Quicksort(1,10);
+disp(a);

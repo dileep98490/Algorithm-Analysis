@@ -1,0 +1,99 @@
+function []=Kruskal(adjmat,nodes)
+
+a=adjmat;
+p=nodes;
+
+[flag]=adjacency(a,p);
+if (flag==2)
+disp('Cannot proceed, the matrix is not connected')
+return
+end
+i=1;
+k=p;
+
+mincost=0;
+disp('The minimum cost at different stages')
+
+
+
+while(1)
+   %Code to break while loop
+       for j=1:p
+        fl=0;
+        for ff=1:p
+if(a(ff,j)==1000)
+fl=1;
+break;
+end
+
+        end
+    
+    if(fl~=1)
+        fl=2;
+        break;
+    end
+    
+       end
+    
+
+
+
+
+
+     
+ if(fl~=2)
+    break;
+ end
+%code end
+
+    
+    
+    
+    
+    
+   
+[min]=minimum(i,a,p);
+z=k;
+
+while (z~=0)
+    f=minimum(z,a,p);
+  
+    if(a(z,f)<=a(i,min)&&a(f,z)~=1000)
+min=f;
+i=z;
+    end
+    z=z-1;
+end
+
+
+ 
+ 
+mincost=mincost+a(i,min);
+a(i,min)=1000;
+
+    
+a(min,i)=1000;
+
+  
+  
+str=sprintf('%d to %d with cost:%d',i,min,mincost);
+ disp(str);
+
+
+f1=mincost;
+
+  i=min;
+
+
+end
+disp('The final minimum cost is')
+
+disp(f1)
+
+
+
+
+
+
+
+

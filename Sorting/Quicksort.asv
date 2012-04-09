@@ -1,0 +1,13 @@
+
+function []=Quicksort(l,r)
+
+if(l<r)
+    [j]=partition(l,r+1);
+ cp=
+    Quicksort(l,j-1);
+    Quicksort(j+1,r);
+end
+end
+
+    
+
